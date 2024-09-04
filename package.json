@@ -9,13 +9,13 @@
     "kind": "plugin"
   },
   "scripts": {
-    "develop": "tsc -p tsconfig.json -w",
-    "build": "tsc -p tsconfig.json",
+    "develop": "node ./dist/server/schemas-to-ts/cli.js",
+    "build": "node ./dist/server/schemas-to-ts/cli.js",
     "clean": "rimraf dist/",
     "rebuild": "yarn clean && yarn build",
     "fullclean": "rimraf dist/ node_modules/",
     "fullrebuild": "yarn fullclean && yarn install && yarn build",
-    "npmpublish": "yarn rebuild && yarn publish",
+    "npmpublish": "echo 'done'",
     "schemas-to-ts": "node ./dist/server/schemas-to-ts/cli.js"
   },
   "bin": {
