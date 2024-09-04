@@ -9,8 +9,11 @@
     "kind": "plugin"
   },
   "scripts": {
-    "develop": "tsc -p tsconfig.json -w",
-    "build": "tsc -p tsconfig.json",
+    "force-generate": "node ./dist/server/schemas-to-ts/cli.js generateInterfaces --acceptedNodeEnvs development,production --logLevel 'Debug' --destinationFolder types/strapi --strapi-root-path ./",
+    "develop:former": "tsc -p tsconfig.json -w",
+    "build:former": "tsc -p tsconfig.json",
+    "develop": "npm run force-generate",
+    "build": "npm run force-generate",
     "clean": "rimraf dist/",
     "rebuild": "yarn clean && yarn build",
     "fullclean": "rimraf dist/ node_modules/",
